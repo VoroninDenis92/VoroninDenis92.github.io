@@ -1,5 +1,6 @@
 const hamburger = document.querySelector('.hamburger'),
       menu = document.querySelector('.menu'),
+      menuBlock = document.querySelector('.menu__block'),
       menuOverlay = document.querySelector('.menu__over'),
       closeElem = document.querySelectorAll('.menu__close, .menu__link a');
 
@@ -14,7 +15,7 @@ function closeNav() {
 closeElem.forEach(el => el.addEventListener('click', closeNav));
 
 menu.addEventListener('click', (e) => {
-    if (!menu.contains(e.target)) {
+    if (e.target != menuBlock) {
         closeNav();
     }
 });
